@@ -14,8 +14,6 @@ class App extends Component {
         <div className="App-intro">
             <Timer/>
         </div>
-        <div className="aaa">Hello</div>
-        <div className="aaa bbb">Welcome</div>
       </div>
     );
   }
