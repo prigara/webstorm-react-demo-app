@@ -4,7 +4,7 @@ import './Timer.css';
 class Timer extends Component {
     constructor(props) {
         super(props);
-        this.state = { seconds: 0 };
+        this.state = { seconds: 0, isStartButtonDisabled: false };
     }
 
     tick() {
@@ -15,17 +15,23 @@ class Timer extends Component {
 
     startTimer = () => {
         this.interval = setInterval(() => this.tick(), 1000);
+        this.setState({
+            isStartButtonDisabled: true
+        });
     };
 
     stopTimer = () => {
         clearInterval(this.interval);
+        this.setState({
+            isStartButtonDisabled: false
+        });
     };
 
     render() {
         return (
             <div className="Timer">
                 <div>Seconds: {this.state.seconds}</div>
-                <button onClick={this.startTimer}>Start timer</button>
+                <button onClick={this.startTimer} disabled={this.state.isStartButtonDisabled}>Start timer</button>
                 <button onClick={this.stopTimer}>Stop timer</button>
             </div>
         )
