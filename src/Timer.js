@@ -23,7 +23,7 @@ class Timer extends Component {
 
     render() {
         return (
-            <div className="timer">
+            <div className="Timer">
                 <div>Seconds: {this.state.seconds}</div>
                 <button onClick={this.startTimer}>Start timer</button>
                 <button onClick={this.stopTimer}>Stop timer</button>
